@@ -9,21 +9,21 @@ try:
     
     a = int(input("Enter first number: "))
     b = int(input("Enter second number: "))
-    
+    result = rand_num(a,b)
     guess = 5
     while(guess != 0):
         print("Guess remaining:", guess)
         num = int(input("Your guess: "))
-        if(num == rand_num(a,b)):
+        if(num == result):
             print("Your guess is right!!!")
             break
-        elif(num > rand_num(a,b)):
+        elif(num > result):
             print("Your guess is bigger than the number\nTry again!")
             guess -= 1
-        elif(num < rand_num(a,b)):
+        elif(num < result):
             print("Your guess is smaller than the number\nTry again!")
             guess -= 1
     if(guess == 0):
-            print("You lost!!!\nThe number was", rand_num(a,b))
+        print("You lost!!!\nThe number was", result)
 except:
     print("Error ===> Please enter numbers!")
